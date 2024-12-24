@@ -10,7 +10,7 @@ browser.get(login_url)
 
 # To interact with the dropdown menu, we need to interact with the select element
 dropdown_element = browser.find_element(By .ID, value="dropdown") #dropdown element
-select = Select(dropdown_element)
+select = Select(dropdown_element) 
 sleep(3)
 
 # Select value by visible text
@@ -22,9 +22,21 @@ sleep(3)
 # select.select_by_value("2")
 
 # Testing the option count: Note that the subheading on the option is part of the index
-option_count = len(select.options)
-expected_count = 3
-if option_count == expected_count:
-    print("Test case passed: count is correct")
-else:
-    print("Test case failed: count is incorrect")
+# option_count = len(select.options)
+# expected_count = 3
+# if option_count == expected_count:
+#     print("Test case passed: count is correct")
+# else:
+#     print("Test case failed: count is incorrect")
+
+# Selecting option by targeting a particular value
+target_value = "Option 2"
+
+for option in select.options:
+    if option.text == target_value:
+        option.click()
+        sleep(3)
+        print(f"The target option {target_value} is selected")
+        break
+    else:
+        print(f"The target option '{target_value}' is not found.")
