@@ -13,7 +13,7 @@ browser.get(url)
 source_element = browser.find_element(By .ID, value="column-a") #Drag this element
 destination_element = browser.find_element(By .ID, value="column-b") # Drop here
 
-#Drag and drop
+#Handle drag and drop using action chain
 actions = ActionChains(browser)
 actions.drag_and_drop(source_element, destination_element).perform()
 sleep(5)
