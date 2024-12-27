@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from selenium.webdriver import Keys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
