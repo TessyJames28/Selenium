@@ -1,7 +1,6 @@
 from PIL import Image, ImageOps
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from time import sleep
 import pytesseract
 
 
@@ -25,4 +24,3 @@ image.save("prepocessed_captcha.png")
 
 captcha_text = pytesseract.image_to_string(image)
 print(f"Extracted CAPTCHA Text: {captcha_text}")
-sleep(10)
