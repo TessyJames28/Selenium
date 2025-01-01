@@ -17,10 +17,10 @@ captcha_element = browser.find_element(By .TAG_NAME, value="img")
 captcha_element.screenshot("captcha.png")
 
 # Processing image
-image = Image.open("captcha.png")
-image = ImageOps.grayscale(image)
-image = image.point(lambda p: p > 128 and 255)
-image.save("prepocessed_captcha.png")
+# image = Image.open("captcha.png")
+# image = ImageOps.grayscale(image)
+# image = image.point(lambda p: p > 128 and 255)
+# image.save("prepocessed_captcha.png")
 
 captcha_text = pytesseract.image_to_string(image)
 print(f"Extracted CAPTCHA Text: {captcha_text}")
